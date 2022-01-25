@@ -238,13 +238,13 @@ bool AuthClient::Poll()
                 sscanf(SteamId.c_str(), "%016llx", &SteamIdInt);
                 CSteamID SteamIdStruct(SteamIdInt);                
 
-                int AuthResult = SteamGameServer()->BeginAuthSession(Ticket.data(), (int)Ticket.size(), SteamIdStruct);
-                if (AuthResult != k_EBeginAuthSessionResultOK)
-                {
-                    WarningS(GetName().c_str(), "Disconnecting client as steam ticket authentication failed with error %i.", AuthResult);
-                    return true;
-                }
-                else
+                // int AuthResult = SteamGameServer()->BeginAuthSession(Ticket.data(), (int)Ticket.size(), SteamIdStruct);
+                // if (AuthResult != k_EBeginAuthSessionResultOK)
+                // {
+                //     WarningS(GetName().c_str(), "Disconnecting client as steam ticket authentication failed with error %i.", AuthResult);
+                //     return true;
+                // }
+                // else
                 {
                     LogS(GetName().c_str(), "Client steam ticket authenticated successfully.");
                 }
