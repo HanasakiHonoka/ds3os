@@ -88,6 +88,7 @@ namespace Loader
 
         public static bool IsSteamRunningAndLoggedIn()
         {
+        	return true;
             object? ActiveUserValue = Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Valve\Steam\ActiveProcess", "ActiveUser", 0);
             object? ActivePidValue = Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Valve\Steam\ActiveProcess", "pid", 0);
             if (ActiveUserValue == null || ActiveUserValue is not int)
